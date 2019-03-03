@@ -1,0 +1,34 @@
+body {
+  overflow-y: scroll;
+}
+
+.extra-margin-lg {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+#photo_search {
+  width: 100%;
+  margin-top: 20px;
+}
+
+form>input[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+}
+
+img, a {
+  margin: 10px auto;
+  object-fit: contain;
+  overflow: hidden;
+  max-height: 100%;
+  height: auto;
+}
+
+.card {
+  padding: 10px;
+  margin: 15px auto;
+  min-height: 300px;
+  max-height: 300px;
+  width: 16rem;
+}

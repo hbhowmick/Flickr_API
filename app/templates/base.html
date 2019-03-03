@@ -1,0 +1,57 @@
+{% extends 'bootstrap/base.html' %}
+
+
+{% block title %}Flickr API{% endblock %}
+
+
+{% block styles %}
+  {{ super() }}
+  <link rel="stylesheet" href="../static/css/main.css">
+{% endblock %}
+
+
+{% block scripts %}
+  {{ super() }}
+  <!-- attach jQuery cdn after supering, bootstrap default jQuery is slim, we need minified -->
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script src="../static/js/app.js"></script>
+{% endblock %}
+
+
+{% block navbar %}
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Flickr App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 extra-margin-lg">
+      <form id="search_photos" class="form-inline" action="" method="post">
+        <input id="photo_search" class="form-control" type="text" name="photo" placeholder="Search for photos...">
+        <input id="submit-btn" class="btn btn-primary" type="submit" name="submit" value="Submit">
+      </form>
+    </div> <!-- ends col 4 -->
+  </div> <!-- ends row for form-->
+
+  {% block app_content %}{% endblock %}
+
+</div> <!-- container -->
+{% endblock %}
